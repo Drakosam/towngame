@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://4sidbo1ywgbj"]
+
+[ext_resource type="PackedScene" uid="uid://isuvxpnw31b5" path="res://mansion/mansion_storey.tscn" id="1_73vbf"]
+[ext_resource type="Script" path="res://mansion/mansion.gd" id="1_80pq7"]
+
+[node name="Mansion" type="Node2D"]
+script = ExtResource("1_80pq7")
+
+[node name="Attic" parent="." instance=ExtResource("1_73vbf")]
+
+[node name="Floor4" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 150)
+
+[node name="Floor3" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 300)
+
+[node name="Floor2" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 450)
+
+[node name="Floor1" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 600)
+
+[node name="GroundFloor" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 750)
+
+[node name="BasementL1" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 900)
+
+[node name="BasementL2" parent="." instance=ExtResource("1_73vbf")]
+position = Vector2(0, 1050)

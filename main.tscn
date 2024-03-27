@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://chb4u35fl0pkx"]
+[gd_scene load_steps=3 format=3 uid="uid://chb4u35fl0pkx"]
+
+[ext_resource type="PackedScene" uid="uid://4sidbo1ywgbj" path="res://mansion/mansion.tscn" id="1_1q1ov"]
+[ext_resource type="PackedScene" uid="uid://bfmp6q0haflsv" path="res://utils/camera.tscn" id="2_bgtbv"]
 
 [node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Mansion" parent="." instance=ExtResource("1_1q1ov")]
+
+[node name="Camera" parent="." instance=ExtResource("2_bgtbv")]
+position = Vector2(225, 316)
