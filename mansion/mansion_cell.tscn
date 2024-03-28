@@ -15,3 +15,19 @@ points = PackedVector2Array(1, 1, 149, 1, 149, 149, 1, 149)
 closed = true
 width = 2.0
 default_color = Color(0, 0, 0, 1)
+
+[node name="NotOwned" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(20, 20, 75, 75, 130, 20, 75, 75, 130, 130, 75, 75, 20, 130, 75, 75)
+closed = true
+default_color = Color(0, 0, 0, 1)
+
+[node name="IconStairs" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="IconStairs"]
+points = PackedVector2Array(7, 140, 7, 7, 30, 7, 123, 70, 148, 70, 123, 70, 36, 143, 2, 143, 143, 143, 143, 75)
+default_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="Line2D2" type="Line2D" parent="IconStairs"]
+points = PackedVector2Array(38, 111, 38, 142, 38, 111, 57, 97, 57, 126, 57, 97, 77, 81, 77, 108, 77, 81, 100, 62, 100, 89, 100, 62, 116, 48, 118, 68, 118, 49, 134, 49, 134, 67, 134, 49, 149, 49)
+default_color = Color(0.219608, 0.219608, 0.219608, 1)

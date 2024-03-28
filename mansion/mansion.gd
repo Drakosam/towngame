@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for ch in get_children():
-		ch.setup_storey(6)
+		ch.setup_storey(9)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

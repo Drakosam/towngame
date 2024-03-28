@@ -14,12 +14,13 @@ func _process(_delta):
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_A:
-		
 			position.x -= 5
-			print('aa ',position)
+
 		if event.pressed and event.keycode == KEY_W:
 			position.y -= 5
+
 		if event.pressed and event.keycode == KEY_S:
 			position.y += 5
+
 		if event.pressed and event.keycode == KEY_D:
 			position.x += 5

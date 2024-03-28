@@ -31,4 +31,18 @@ func set_color_scheme(color_sheme):
 	
 	if color_sheme == 0:
 		$ColorRect.color = colorBasementL2
-		
+
+
+func hide_all():
+	$NotOwned.visible = false
+	$IconStairs.visible = false
+	
+
+func set_as_stairs():
+	hide_all()
+	$IconStairs.visible = true
+	
+	
+func set_as_not_owned():
+	hide_all()
+	$NotOwned.visible = true

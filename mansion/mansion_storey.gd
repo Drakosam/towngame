@@ -31,6 +31,11 @@ func set_cells_size(cell_count):
 		item.position.x = 0 + (150*i)
 		item.set_color_scheme(color_sheme_value)
 		
+		if (i+2)%3==0:
+			item.set_as_stairs()
+		else:
+			item.set_as_not_owned()
+		
 		add_child(item)
 
 
