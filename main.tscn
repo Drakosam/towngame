@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://chb4u35fl0pkx"]
+[gd_scene load_steps=6 format=3 uid="uid://chb4u35fl0pkx"]
 
 [ext_resource type="PackedScene" uid="uid://4sidbo1ywgbj" path="res://mansion/mansion.tscn" id="1_1q1ov"]
+[ext_resource type="PackedScene" uid="uid://bmqo8xet433kt" path="res://gui/TopPanel.tscn" id="1_3xv5p"]
+[ext_resource type="Script" path="res://main.gd" id="1_mdpef"]
+[ext_resource type="PackedScene" uid="uid://o5m66t0wbh8w" path="res://gui/RoomPanel.tscn" id="2_7bau0"]
 [ext_resource type="PackedScene" uid="uid://bfmp6q0haflsv" path="res://utils/camera.tscn" id="2_bgtbv"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_mdpef")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TopPanel" parent="CanvasLayer" instance=ExtResource("1_3xv5p")]
+
+[node name="RoomPanel" parent="CanvasLayer" instance=ExtResource("2_7bau0")]
 
 [node name="Mansion" parent="." instance=ExtResource("1_1q1ov")]
 
 [node name="Camera" parent="." instance=ExtResource("2_bgtbv")]
 position = Vector2(225, 316)
+
+[connection signal="cell_picked_signal" from="Mansion" to="." method="_on_mansion_cell_picked_signal"]

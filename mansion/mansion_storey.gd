@@ -3,6 +3,7 @@ extends Node2D
 var MCell = preload("res://mansion/mansion_cell.tscn")
 
 var color_sheme_value = 3
+signal cell_picked_signal(cell_name)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +31,8 @@ func set_cells_size(cell_count):
 		item.position.y = 0
 		item.position.x = 0 + (150*i)
 		item.set_color_scheme(color_sheme_value)
+		item.name = name+"#"+str(i)
+		item.connect('pick_me',cell_picked)
 		
 		if (i+2)%3==0:
 			item.set_as_stairs()
@@ -42,5 +45,8 @@ func set_cells_size(cell_count):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+
+func cell_picked(cell_name):
+	emit_signal("cell_picked_signal",cell_name)
 	

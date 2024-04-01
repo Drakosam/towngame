@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpf1ejb8bik48"]
+[gd_scene load_steps=3 format=3 uid="uid://cpf1ejb8bik48"]
 
 [ext_resource type="Script" path="res://mansion/mansion_cell.gd" id="1_kkey4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vevrr"]
+size = Vector2(150, 150)
 
 [node name="MansionCell" type="Node2D"]
 script = ExtResource("1_kkey4")
@@ -31,3 +34,9 @@ default_color = Color(0.219608, 0.219608, 0.219608, 1)
 [node name="Line2D2" type="Line2D" parent="IconStairs"]
 points = PackedVector2Array(38, 111, 38, 142, 38, 111, 57, 97, 57, 126, 57, 97, 77, 81, 77, 108, 77, 81, 100, 62, 100, 89, 100, 62, 116, 48, 118, 68, 118, 49, 134, 49, 134, 67, 134, 49, 149, 49)
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(75, 75)
+shape = SubResource("RectangleShape2D_vevrr")

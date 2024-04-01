@@ -28,3 +28,12 @@ position = Vector2(0, 900)
 
 [node name="BasementL2" parent="." instance=ExtResource("1_73vbf")]
 position = Vector2(0, 1050)
+
+[connection signal="cell_picked_signal" from="Attic" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="Floor4" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="Floor3" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="Floor2" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="Floor1" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="GroundFloor" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="BasementL1" to="." method="_cell_picked_signal"]
+[connection signal="cell_picked_signal" from="BasementL2" to="." method="_cell_picked_signal"]
