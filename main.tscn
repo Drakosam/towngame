@@ -14,6 +14,7 @@ script = ExtResource("1_mdpef")
 [node name="TopPanel" parent="CanvasLayer" instance=ExtResource("1_3xv5p")]
 
 [node name="RoomPanel" parent="CanvasLayer" instance=ExtResource("2_7bau0")]
+visible = false
 
 [node name="Mansion" parent="." instance=ExtResource("1_1q1ov")]
 

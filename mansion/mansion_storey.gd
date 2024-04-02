@@ -3,7 +3,7 @@ extends Node2D
 var MCell = preload("res://mansion/mansion_cell.tscn")
 
 var color_sheme_value = 3
-signal cell_picked_signal(cell_name)
+signal cell_picked_signal(cell)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +47,6 @@ func _process(delta):
 	pass
 
 
-func cell_picked(cell_name):
-	emit_signal("cell_picked_signal",cell_name)
+func cell_picked(cell):
+	emit_signal("cell_picked_signal",cell)
 	

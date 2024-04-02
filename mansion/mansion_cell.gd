@@ -6,7 +6,9 @@ var colorGroundFlor = Color("#BCA89F")
 var colorBasement = Color("#B4C5CE")
 var colorBasementL2 = Color("#809AA9")
 
-signal pick_me(my_name)
+var roomIcon = "notOwned"
+
+signal pick_me(cell)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,6 +40,7 @@ func set_color_scheme(color_sheme):
 func hide_all():
 	$NotOwned.visible = false
 	$IconStairs.visible = false
+	$IconEmptyRoom.visible = false
 	
 
 func set_as_stairs():
@@ -50,12 +53,10 @@ func set_as_not_owned():
 	$NotOwned.visible = true
 
 
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var check = get_local_mouse_position()
-			if check.x >= 0 and check.x <= 150:
-				if check.y >= 0 and check.y <= 150:
-					emit_signal("pick_me",name)
+func meake_empty():
+	hide_all()
+	$IconEmptyRoom.visible = true
 
 
+func _on_button_pressed():
+	emit_signal("pick_me",self)

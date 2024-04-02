@@ -1,6 +1,6 @@
-extends Node2D
+extends Node
 
-
+var current_room = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,9 +11,11 @@ func _process(delta):
 	pass
 
 
-func _on_mansion_cell_picked_signal(cell):
-	$CanvasLayer/RoomPanel.set_cell(cell.name)
-	GlobalRoomManager.set_current_room(cell)
-	$CanvasLayer/RoomPanel.visible = true
+func set_current_room(room):
+	print(room.name)
+	current_room = room
+	
 
-
+func make_room_empty():
+	current_room.meake_empty()
+	

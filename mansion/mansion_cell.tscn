@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://mansion/mansion_cell.gd" id="1_kkey4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vevrr"]
-size = Vector2(150, 150)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7ifc"]
+bg_color = Color(1, 1, 1, 0.00392157)
 
 [node name="MansionCell" type="Node2D"]
 script = ExtResource("1_kkey4")
@@ -26,6 +26,7 @@ closed = true
 default_color = Color(0, 0, 0, 1)
 
 [node name="IconStairs" type="Node2D" parent="."]
+visible = false
 
 [node name="Line2D" type="Line2D" parent="IconStairs"]
 points = PackedVector2Array(7, 140, 7, 7, 30, 7, 123, 70, 148, 70, 123, 70, 36, 143, 2, 143, 143, 143, 143, 75)
@@ -35,8 +36,16 @@ default_color = Color(0.219608, 0.219608, 0.219608, 1)
 points = PackedVector2Array(38, 111, 38, 142, 38, 111, 57, 97, 57, 126, 57, 97, 77, 81, 77, 108, 77, 81, 100, 62, 100, 89, 100, 62, 116, 48, 118, 68, 118, 49, 134, 49, 134, 67, 134, 49, 149, 49)
 default_color = Color(0.219608, 0.219608, 0.219608, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="IconEmptyRoom" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(75, 75)
-shape = SubResource("RectangleShape2D_vevrr")
+[node name="Line2D" type="Line2D" parent="IconEmptyRoom"]
+points = PackedVector2Array(2, 148, 34, 115, 34, 1, 34, 115, 148, 115)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+offset_right = 150.0
+offset_bottom = 150.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_h7ifc")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

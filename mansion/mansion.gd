@@ -1,7 +1,7 @@
 extends Node2D
 
 
-signal cell_picked_signal(cell_name)
+signal cell_picked_signal(cell)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for ch in get_children():
@@ -13,5 +13,5 @@ func _process(delta):
 	pass
 
 
-func _cell_picked_signal(cell_name):
-	emit_signal('cell_picked_signal',cell_name)
+func _cell_picked_signal(cell):
+	emit_signal('cell_picked_signal',cell)
