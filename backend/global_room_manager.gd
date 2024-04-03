@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -18,4 +18,7 @@ func set_current_room(room):
 
 func make_room_empty():
 	current_room.meake_empty()
+	
+func make_room_as_den():
+	current_room.make_as_den()
 	

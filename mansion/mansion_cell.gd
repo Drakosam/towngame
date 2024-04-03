@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -41,7 +41,12 @@ func hide_all():
 	$NotOwned.visible = false
 	$IconStairs.visible = false
 	$IconEmptyRoom.visible = false
-	
+	$IconDen.visible = false
+
+
+func make_as_den():
+	hide_all()
+	$IconDen.visible = true
 
 func set_as_stairs():
 	hide_all()
@@ -58,5 +63,9 @@ func meake_empty():
 	$IconEmptyRoom.visible = true
 
 
-func _on_button_pressed():
-	emit_signal("pick_me",self)
+func _on_area_2d_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == 1 and event.pressed:
+			if GolobalVariable.agent_on_mouse == null:
+				emit_signal("pick_me",self)
+			

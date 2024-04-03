@@ -18,3 +18,4 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalRoomManager="*res://backend/global_room_manager.gd"
+GolobalVariable="*res://backend/golobal_variable.gd"

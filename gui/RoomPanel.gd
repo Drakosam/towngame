@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if not GlobalRoomManager.current_room:
 		visible = false 
 	
@@ -18,3 +18,7 @@ func set_cell(cell_name):
 
 func _on_make_empty_btt_pressed():
 	GlobalRoomManager.make_room_empty()
+
+
+func _on_make_den_btt_pressed():
+	GlobalRoomManager.make_room_as_den()

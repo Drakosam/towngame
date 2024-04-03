@@ -108,4 +108,9 @@ theme_override_styles/separator = SubResource("StyleBoxLine_ah5sv")
 layout_mode = 2
 text = "make_empty"
 
+[node name="MakeDenBtt" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "make_den"
+
 [connection signal="pressed" from="VBoxContainer/MakeEmptyBtt" to="." method="_on_make_empty_btt_pressed"]
+[connection signal="pressed" from="VBoxContainer/MakeDenBtt" to="." method="_on_make_den_btt_pressed"]
