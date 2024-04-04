@@ -21,3 +21,6 @@ func _on_actor_menager_show_actor_signal(actor):
 	$CanvasLayer/RPanel.visible = true
 	$CanvasLayer/RPanel.show_actor_panel()
 
+
+func _on_timer_timeout():
+	$ActorMenager.act()

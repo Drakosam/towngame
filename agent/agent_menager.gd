@@ -26,3 +26,8 @@ func _process(_delta):
 
 func show_actor_event(actor):
 	emit_signal("show_actor_signal",actor)
+
+
+func act():
+	for child in get_children():
+		child.act()
