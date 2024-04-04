@@ -1,9 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cho4tewhcc6nm"]
 
 [ext_resource type="Script" path="res://agent/agent_menager.gd" id="1_eqkdd"]
-[ext_resource type="PackedScene" uid="uid://cparuel18bl0c" path="res://agent/agent.tscn" id="2_5g0wj"]
+[ext_resource type="PackedScene" uid="uid://cparuel18bl0c" path="res://agent/actor.tscn" id="2_gdvne"]
 
-[node name="AgentMenager" type="Node2D"]
+[node name="ActorMenager" type="Node2D"]
 script = ExtResource("1_eqkdd")
 
-[node name="Agent" parent="." instance=ExtResource("2_5g0wj")]
+[node name="Agent" parent="." instance=ExtResource("2_gdvne")]
+
+[connection signal="actor_picked_signal" from="Agent" to="." method="show_actor_event"]

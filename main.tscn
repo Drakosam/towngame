@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://4sidbo1ywgbj" path="res://mansion/mansion.tscn" id="1_1q1ov"]
 [ext_resource type="PackedScene" uid="uid://bmqo8xet433kt" path="res://gui/TopPanel.tscn" id="1_3xv5p"]
 [ext_resource type="Script" path="res://main.gd" id="1_mdpef"]
-[ext_resource type="PackedScene" uid="uid://o5m66t0wbh8w" path="res://gui/RoomPanel.tscn" id="2_7bau0"]
 [ext_resource type="PackedScene" uid="uid://bfmp6q0haflsv" path="res://utils/camera.tscn" id="2_bgtbv"]
+[ext_resource type="PackedScene" uid="uid://b7x3xjn4am7o6" path="res://gui/r_panel.tscn" id="3_q1giv"]
 [ext_resource type="PackedScene" uid="uid://cho4tewhcc6nm" path="res://agent/agent_menager.tscn" id="5_oh1jt"]
 
 [node name="Main" type="Node2D"]
@@ -35,7 +35,7 @@ color = Color(0.290196, 0.129412, 0.027451, 1)
 
 [node name="TopPanel" parent="CanvasLayer" instance=ExtResource("1_3xv5p")]
 
-[node name="RoomPanel" parent="CanvasLayer" instance=ExtResource("2_7bau0")]
+[node name="RPanel" parent="CanvasLayer" instance=ExtResource("3_q1giv")]
 visible = false
 
 [node name="Mansion" parent="." instance=ExtResource("1_1q1ov")]
@@ -43,6 +43,7 @@ visible = false
 [node name="Camera" parent="." instance=ExtResource("2_bgtbv")]
 position = Vector2(225, 316)
 
-[node name="AgentMenager" parent="." instance=ExtResource("5_oh1jt")]
+[node name="ActorMenager" parent="." instance=ExtResource("5_oh1jt")]
 
 [connection signal="cell_picked_signal" from="Mansion" to="." method="_on_mansion_cell_picked_signal"]
+[connection signal="show_actor_signal" from="ActorMenager" to="." method="_on_actor_menager_show_actor_signal"]

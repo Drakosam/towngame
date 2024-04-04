@@ -11,8 +11,13 @@ func _process(_delta):
 
 
 func _on_mansion_cell_picked_signal(cell):
-	$CanvasLayer/RoomPanel.set_cell(cell.name)
 	GlobalRoomManager.set_current_room(cell)
-	$CanvasLayer/RoomPanel.visible = true
+	$CanvasLayer/RPanel.visible = true
+	$CanvasLayer/RPanel.show_room_panel()
 
+
+func _on_actor_menager_show_actor_signal(actor):
+	GolobalVariable.set_current_actor(actor)
+	$CanvasLayer/RPanel.visible = true
+	$CanvasLayer/RPanel.show_actor_panel()
 

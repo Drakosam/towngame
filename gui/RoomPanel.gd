@@ -8,12 +8,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if not GlobalRoomManager.current_room:
-		visible = false 
+	pass
 	
 
-func set_cell(cell_name):
-	$VBoxContainer/CellName.text = cell_name
+func show_panel():
+	visible=true
+	$VBoxContainer/CellName.text = GlobalRoomManager.current_room.name
 
 
 func _on_make_empty_btt_pressed():

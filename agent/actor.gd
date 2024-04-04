@@ -1,6 +1,6 @@
 extends Node2D
 
-
+signal actor_picked_signal(actor)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -14,7 +14,7 @@ func _process(_delta):
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
-			print('it me')
+			emit_signal("actor_picked_signal",self)
 
 
 func _on_area_2d_mouse_entered():

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxbddmvlmoesb"]
+
+[ext_resource type="Script" path="res://gui/actor_panel.gd" id="1_1lfar"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xqxeg"]
+color = Color(0.360784, 0.101961, 0, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4bl4s"]
+color = Color(0.360784, 0.101961, 0, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_taw65"]
+color = Color(0.360784, 0.101961, 0, 1)
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w2mmr"]
+color = Color(0.360784, 0.101961, 0, 1)
+thickness = 4
+vertical = true
+
+[node name="ActorPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1lfar")
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_right = -1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxLine_xqxeg")
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxLine_4bl4s")
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_taw65")
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_w2mmr")
