@@ -2,15 +2,21 @@ extends Node2D
 
 signal actor_picked_signal(actor)
 
+var current_entity= null
+
 var status = "IDLE"
 var max_hp = 10
-var hp = 1
+var hp = max_hp
 var max_stamina = 100
-var stamina = 1
+var stamina = max_stamina
 var max_mana = 10
-var mana = 1
+var mana = max_mana
+var job_progres = 0
+var max_job_progres = 10
 
 var rest_charge = 0
+
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	pass
@@ -39,11 +45,14 @@ func get_status():
 
 
 func run_mission(mision_name_id):
+	job_progres = 0
+	max_job_progres = 10
 	if mision_name_id == 'idle':
 		status = "IDLE"
 	elif mision_name_id == 'rest':
 		status = "REST"
 	elif mision_name_id == 'hasle':
+		max_job_progres = 100
 		status = "HASLE"
 
 
@@ -90,7 +99,6 @@ func _rest_process():
 		run_mission('idle')	
 
 
-func _hasle_process():
-	rest_charge = 0
-	if stamina > 0:
-		stamina -=1 
+func _hasle_process():	
+	print('base hasle')
+		

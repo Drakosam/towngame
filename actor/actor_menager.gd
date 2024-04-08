@@ -1,6 +1,6 @@
 extends Node2D
 
-var ActorEntity = preload("res://agent/actor.tscn")
+var ActorEntity = preload("res://actor/actor.tscn")
 
 var lvlel_attic = 140
 var lvlel_floor_4 = lvlel_attic + 150 

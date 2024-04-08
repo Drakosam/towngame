@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_mdpef"]
 [ext_resource type="PackedScene" uid="uid://bfmp6q0haflsv" path="res://utils/camera.tscn" id="2_bgtbv"]
 [ext_resource type="PackedScene" uid="uid://b7x3xjn4am7o6" path="res://gui/r_panel.tscn" id="3_q1giv"]
-[ext_resource type="PackedScene" uid="uid://cho4tewhcc6nm" path="res://agent/agent_menager.tscn" id="5_oh1jt"]
+[ext_resource type="PackedScene" uid="uid://cho4tewhcc6nm" path="res://actor/actor_menager.tscn" id="5_oh1jt"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mdpef")

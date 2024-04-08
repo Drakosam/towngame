@@ -7,7 +7,9 @@ func _ready():
 
 func _process(delta):
 	if GolobalVariable.curent_actor:
-		$VBoxContainer/ActorStatus.text = "Status :: " + GolobalVariable.curent_actor.get_status()
+		$VBoxContainer/JobStatus.max_value = GolobalVariable.curent_actor.max_job_progres
+		$VBoxContainer/JobStatus.value = GolobalVariable.curent_actor.job_progres
+		$VBoxContainer/JobStatus/ActorStatus.text = "Status :: " + GolobalVariable.curent_actor.get_status()
 		
 		$VBoxContainer/HP.max_value = GolobalVariable.curent_actor.max_hp
 		$VBoxContainer/HP.value = GolobalVariable.curent_actor.hp
