@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cho4tewhcc6nm"]
+[gd_scene load_steps=4 format=3 uid="uid://cho4tewhcc6nm"]
 
 [ext_resource type="Script" path="res://actor/actor_menager.gd" id="1_eqkdd"]
-[ext_resource type="PackedScene" uid="uid://cparuel18bl0c" path="res://actor/actor.tscn" id="2_gdvne"]
+[ext_resource type="PackedScene" uid="uid://cparuel18bl0c" path="res://actor/actor_type/actor.tscn" id="2_gdvne"]
+[ext_resource type="PackedScene" uid="uid://2q8plt8hpm7a" path="res://actor/actor_type/player_actor.tscn" id="3_eead4"]
 
 [node name="ActorMenager" type="Node2D"]
 script = ExtResource("1_eqkdd")
 
 [node name="Agent" parent="." instance=ExtResource("2_gdvne")]
 
+[node name="PlayerActor" parent="." instance=ExtResource("3_eead4")]
+
 [connection signal="actor_picked_signal" from="Agent" to="." method="show_actor_event"]
+[connection signal="actor_picked_signal" from="PlayerActor" to="." method="show_actor_event"]

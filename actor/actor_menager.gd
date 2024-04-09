@@ -1,6 +1,6 @@
 extends Node2D
 
-var ActorEntity = preload("res://actor/actor.tscn")
+var ActorEntity = preload("res://actor/actor_type/actor.tscn")
 
 var lvlel_attic = 140
 var lvlel_floor_4 = lvlel_attic + 150 
@@ -17,6 +17,9 @@ signal show_actor_signal(actor)
 func _ready():
 	$Agent.position.x = 100
 	$Agent.position.y = lvlel_attic
+	
+	$PlayerActor.position.x = 100
+	$PlayerActor.position.y = lvlel_floor_4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

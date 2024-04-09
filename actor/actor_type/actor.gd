@@ -100,5 +100,18 @@ func _rest_process():
 
 
 func _hasle_process():	
-	print('base hasle')
+	job_progres += 1
+	if job_progres >= max_job_progres:
+		job_progres -= max_job_progres
+		stamina -= rng.randi_range(5,35)
+		_hasle_result()
 		
+	if stamina < 35:
+		run_mission('idle')
+
+
+func _hasle_result():
+	pass
+
+func _on_actor_model_actor_picked_signal():
+	emit_signal("actor_picked_signal",self)

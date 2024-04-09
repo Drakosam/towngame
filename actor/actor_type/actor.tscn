@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cparuel18bl0c"]
+
+[ext_resource type="Script" path="res://actor/actor_type/actor.gd" id="1_fr0kv"]
+[ext_resource type="PackedScene" uid="uid://b5fvkv66cophc" path="res://actor/actor_models/actor_model.tscn" id="2_lncft"]
+
+[node name="Actor" type="Node2D"]
+script = ExtResource("1_fr0kv")
+
+[node name="ActorModel" parent="." instance=ExtResource("2_lncft")]
+
+[connection signal="actor_picked_signal" from="ActorModel" to="." method="_on_actor_model_actor_picked_signal"]

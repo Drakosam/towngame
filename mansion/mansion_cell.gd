@@ -66,6 +66,6 @@ func meake_empty():
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
-			if GolobalVariable.agent_on_mouse == null:
+			if GolobalVariable.actor_model_on_mouse == null:
 				emit_signal("pick_me",self)
 			
