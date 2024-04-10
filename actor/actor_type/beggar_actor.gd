@@ -16,4 +16,4 @@ func _actor_picked():
 
 
 func _hasle_result():
-	print('player hasle result')
+	print('beggar hasle result')
