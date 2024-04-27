@@ -11,10 +11,12 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.pressed:
 			emit_signal("actor_picked_signal")
+
 
 func _on_area_2d_mouse_entered():
 	GolobalVariable.set_character_on_mouse(self)

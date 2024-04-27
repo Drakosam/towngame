@@ -18,6 +18,9 @@ var pos_2 = 72
 var pos_3 = 112
 var pos_4 = 150
 
+
+var slot_outside = []
+
 signal show_actor_signal(actor)
 
 
@@ -36,3 +39,27 @@ func show_actor_event(actor):
 func act():
 	for child in get_children():
 		child.act()
+
+
+func spawn_actor(actor_seed):
+	if actor_seed['type']=='player':
+		_spown_player()
+
+
+func _spown_player():
+	var actor = PlayerEntity.instantiate()
+	add_child(actor)
+	actor.connect('actor_picked_signal',show_actor_event)
+	_add_to_oudside_slot(actor)
+
+
+func _add_to_oudside_slot(actor):
+	slot_outside.append(actor)
+	for i in range(len(slot_outside)) :
+		slot_outside[i].position.x = -50 - 40 * i
+		slot_outside[i].position.y = lvlel_ground_floor
+
+
+func update_movment_map(new_map):
+	for ch in get_children():
+		ch.map_movment = new_map

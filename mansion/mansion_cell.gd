@@ -7,8 +7,10 @@ var colorBasement = Color("#B4C5CE")
 var colorBasementL2 = Color("#809AA9")
 
 var roomIcon = "notOwned"
+var accessible = false
 
 signal pick_me(cell)
+signal cell_updated_signal()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,20 +49,26 @@ func hide_all():
 func make_as_den():
 	hide_all()
 	$IconDen.visible = true
+	accessible = true
+	emit_signal("cell_updated_signal")
 
 func set_as_stairs():
 	hide_all()
 	$IconStairs.visible = true
-	
+	accessible = true
+	emit_signal("cell_updated_signal")
 	
 func set_as_not_owned():
 	hide_all()
 	$NotOwned.visible = true
-
+	accessible = false
+	emit_signal("cell_updated_signal")
 
 func meake_empty():
 	hide_all()
 	$IconEmptyRoom.visible = true
+	accessible = true
+	emit_signal("cell_updated_signal")
 
 
 func _on_area_2d_input_event(_viewport, event, _shape_idx):
